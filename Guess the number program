@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int number of guesses = 0;
+    int guess;
+    
+    while (true) {
+        cout << "Please pick a number 1 - 100..." << endl;
+    cin >> guess;
+    }
