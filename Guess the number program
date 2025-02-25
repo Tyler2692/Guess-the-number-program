@@ -4,25 +4,27 @@ using namespace std;
 int main()
 {
     int number = 82; //correct number
-    int attempt = 1; //
-    int guess;
+    int guess = 0; // number the user guesses
     
     cout << "please enter a number between 1 - 100..." << endl;
     
+    while (guess != number){
     cin >> guess;
     
     if (guess > number){
         cout << "Sorry, it's too high. Please try again." << endl;
     }
     
-    else if ( guess < number){
+    else if (guess < number){
          cout << "Sorry, it's too low. Please try again." << endl;
     }
     
-    else if (guess == number){
+    else {
         cout << "Congrats!!! You guessed it correctly!!!" << endl;
     }
+  }
 }
+
     
     
     
