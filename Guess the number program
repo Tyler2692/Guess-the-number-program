@@ -10,7 +10,7 @@ int main()
 
     cout << "please enter a number between 1 - 100..." << endl;
 
-    while (guess != number){
+    while (guess != number){ // loops until user puts correct guess
     cin >> guess;
 
     if (cin.fail()){// checks whether or not it failed
@@ -33,5 +33,4 @@ int main()
   }
 }
 
-    
     
