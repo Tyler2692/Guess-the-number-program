@@ -1,30 +1,37 @@
 #include <iostream>
+#include <limits> // For std::numeric_limits
+
 using namespace std;
 
 int main()
 {
     int number = 82; //correct number
     int guess = 0; // number the user guesses
-    
+
     cout << "please enter a number between 1 - 100..." << endl;
-    
+
     while (guess != number){
     cin >> guess;
-    
-    if (guess > number){
+
+    if (cin.fail()){// checks whether or not it failed
+    cin.clear(); // resets error flag
+    cin.ignore(10000, '\n'); // discards invalid inputs in buffer
+    cout << "Invalid input. Please enter an integer." << endl;
+        }
+
+    else if (guess > number){
         cout << "Sorry, it's too high. Please try again." << endl;
     }
-    
+
     else if (guess < number){
          cout << "Sorry, it's too low. Please try again." << endl;
     }
-    
+
     else {
         cout << "Congrats!!! You guessed it correctly!!!" << endl;
     }
   }
 }
 
-    
     
     
