@@ -21,11 +21,11 @@ int main()
 
     else if (guess > number){
         cout << "Sorry, it's too high. Please try again." << endl;
-    } // if number is too high, it reapeats
+    } // if number is too high, it repeats
 
     else if (guess < number){
          cout << "Sorry, it's too low. Please try again." << endl;
-    } // if number is too low, it reapeats
+    } // if number is too low, it repeats
 
     else {
         cout << "Congrats!!! You guessed it correctly!!!" << endl;
