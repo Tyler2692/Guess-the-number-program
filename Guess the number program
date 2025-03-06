@@ -8,6 +8,13 @@ int main()
     int number = 82; //correct number
     int guess = 0; // number the user guesses
 
+    cout << "               |                                                                                            " << endl
+         << ",---..   .,-.-.|---.,---.,---.    ,---..   .,---.,---.,---.,---.,---.    ,---.,---.,---.,---.,---.,---.,-.-." << endl
+         << "|   ||   || | ||   ||---'|        |   ||   ||---'`---.`---.|---'|        |   ||    |   ||   ||    ,---|| | |" << endl
+         << "`   '`---'` ' '`---'`---'`        `---|`---'`---'`---'`---'`---'`        |---'`    `---'`---|`    `---^` ' '" << endl
+         << "                                  `---'                                  |              `---'               " << endl;
+
+
     cout << "please enter a number between 1 - 100..." << endl;
 
     while (guess != number){ // loops until user puts correct guess
@@ -32,5 +39,6 @@ int main()
     } // if number is correct it ends
   }
 }
+
 
     
