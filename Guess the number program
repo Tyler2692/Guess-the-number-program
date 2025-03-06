@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int number = 82; //correct number
+    int number = rand() % 101; //correct number
     int guess = 0; // number the user guesses
 
     cout << "               |                                                                                            " << endl
@@ -39,6 +39,3 @@ int main()
     } // if number is correct it ends
   }
 }
-
-
-    
