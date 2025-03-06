@@ -1,12 +1,15 @@
 #include <iostream>
 #include <limits> // For std::numeric_limits
+#include <ctime>
 
 using namespace std;
 
 int main()
 {
+    srand(time(0));
     int number = rand() % 101; //correct number
     int guess = 0; // number the user guesses
+    int attempt = 0
 
     cout << "               |                                                                                            " << endl
          << ",---..   .,-.-.|---.,---.,---.    ,---..   .,---.,---.,---.,---.,---.    ,---.,---.,---.,---.,---.,---.,-.-." << endl
