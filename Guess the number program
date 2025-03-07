@@ -9,8 +9,8 @@ int main()
     srand(time(0));
     int number = rand() % 101; //correct number
     int guess = 0; // number the user guesses
-    int attempt = 0
-
+    int attempt = 0;
+    
     cout << "               |                                                                                            " << endl
          << ",---..   .,-.-.|---.,---.,---.    ,---..   .,---.,---.,---.,---.,---.    ,---.,---.,---.,---.,---.,---.,-.-." << endl
          << "|   ||   || | ||   ||---'|        |   ||   ||---'`---.`---.|---'|        |   ||    |   ||   ||    ,---|| | |" << endl
@@ -22,6 +22,7 @@ int main()
 
     while (guess != number){ // loops until user puts correct guess
     cin >> guess;
+    attempt++;
 
     if (cin.fail()){// checks whether or not it failed
     cin.clear(); // resets error flag
@@ -38,7 +39,10 @@ int main()
     } // if number is too low, it repeats
 
     else {
-        cout << "Congrats!!! You guessed it correctly!!!" << endl;
+        cout << "Congrats!!! You guessed it correctly with " << attempt << " attempts!!!" << endl;
     } // if number is correct it ends
   }
 }
+
+
+
