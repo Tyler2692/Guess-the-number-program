@@ -1,49 +1,65 @@
 #include <iostream>
-#include <limits> // For std::numeric_limits
-#include <ctime>
+#include <cmath>
 #include <cstdlib>
-
 using namespace std;
+
+double windchillcalc(float T, float Y){
+    return 35.74 + ((0.6215 * T) - (35.75*(pow(Y, 0.16)))) + (0.4275 * T * (pow(Y, 0.16)));
+} // calculation for wind chill
+
+double cloudcalc(float d, float T){
+    return ((T - d) / 4.4) * 1000;
+ } // calculation for cloud base
+ 
+void userinandout(){
+    
+    float T, Y, d;
+    
+    cout << "Please enter degrees in Fahrenheit... ";
+    cin >> T;
+
+    cout << "Now, please enter wind speed in mph... ";
+    cin >> Y;
+
+    cout << "Now enter dew point... ";
+    cin >> d;
+
+    double windchill = windchillcalc(T, Y); // adds function to code
+
+    double cloudbase = cloudcalc(d, T); // adds function to code
+
+    cout << " " << endl
+         << " Temperature | Wind speed | Dew point | Wind chill | Cloud Base " << endl
+         << "----------------------------------------------------------------" << endl
+         << T << "        | " << Y << " mph    | " << d << " F      | "
+         << windchill << " F    | " << cloudbase << " feet " << endl;
+}
 
 int main()
 {
-    srand(time(0));
-    int number = rand() % 101; //correct number
-    int guess = 0; // number the user guesses
-    int attempt = 0;
+
+    cout << ". . .          |    |                  ,---.                              " << endl
+         << "| | |,---.,---.|--- |---.,---.,---.    |---',---.,---.,---.,---.,---.,-.-." << endl
+         << "| | ||---',---||    |   ||---'|        |    |    |   ||   ||    ,---|| | |" << endl
+         << "`-'-'`---'`---^`---'`   '`---'`        `    `    `---'`---|`    `---^` ' '" << endl
+         << "                                                      `---'               " << endl;
+
+    cout << "====================================" << endl
+         << "|                                  |" << endl
+         << "|    this program allows you to    |" << endl
+         << "|  calculate the wind chill and    |" << endl
+         << "|  cloud base using temperature,   |" << endl
+         << "|  wind speed, and dew point.      |" << endl
+         << "|                                  |" << endl
+         << "====================================" << endl;
+
+    cout << "press enter to continue..." << endl;
+
+    cin.ignore(); // allows user to press enter
     
-    cout << "               |                                                                                            " << endl
-         << ",---..   .,-.-.|---.,---.,---.    ,---..   .,---.,---.,---.,---.,---.    ,---.,---.,---.,---.,---.,---.,-.-." << endl
-         << "|   ||   || | ||   ||---'|        |   ||   ||---'`---.`---.|---'|        |   ||    |   ||   ||    ,---|| | |" << endl
-         << "`   '`---'` ' '`---'`---'`        `---|`---'`---'`---'`---'`---'`        |---'`    `---'`---|`    `---^` ' '" << endl
-         << "                                  `---'                                  |              `---'               " << endl;
+    userinandout(); // caling for the functions
 
-
-    cout << "please enter a number between 1 - 100..." << endl;
-
-    while (guess != number){ // loops until user puts correct guess
-    cin >> guess;
-    attempt++;
-
-    if (cin.fail()){// checks whether or not it failed
-    cin.clear(); // resets error flag
-    cin.ignore(10000, '\n'); // discards invalid inputs in buffer
-    cout << "Invalid input. Please enter an integer." << endl;
-        }
-
-    else if (guess > number){
-        cout << "Sorry, it's too high. Please try again." << endl;
-    } // if number is too high, it repeats
-
-    else if (guess < number){
-         cout << "Sorry, it's too low. Please try again." << endl;
-    } // if number is too low, it repeats
-
-    else {
-        cout << "Congrats!!! You guessed it correctly with " << attempt << " attempts!!!" << endl;
-    } // if number is correct it ends
-  }
+    return 0;
 }
-
 
 
